@@ -2,16 +2,16 @@ name: Action Workflow Demo
 on: push
 jobs:
   job1:
-    name: Job Hello
+    name: Job Hello on ubuntu-18.04
     runs-on: ubuntu-18.04
     steps:
-    - name: checkout
+    - name: checkout code
       uses: actions/checkout@master
     - name: Run a single-line script
       run: echo "Hello World, 2020!"
   job2:
-    name: Job macOS
-    runs-on: macos-latest
+    name: Job shell on macos-10.15
+    runs-on: macos-10.15
     steps:
     - name: Run a multi-line script
       env:
