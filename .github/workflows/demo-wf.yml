@@ -1,0 +1,22 @@
+name: Action Workflow Demo
+on: push
+jobs:
+  job1:
+    name: Job Hello
+    runs-on: ubuntu-18.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    - name: Run a single-line script
+      run: echo "Hello World, 2020!"
+  job2:
+    name: Job macOS
+    runs-on: macos-latest
+    steps:
+    - name: Run a multi-line script
+      env:
+        MY_VAR: Hello World!
+        MY_NAME: YuanzhenZhou
+      run: |
+        echo $MY_VAR
+        echo My name is $MY_NAME
